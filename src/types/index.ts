@@ -29,9 +29,8 @@ export interface Ingredient extends BaseType {
 }
 
 // --------------------
-// Task 1.3: Add User & Recipe
+// User & Recipe
 // --------------------
-
 export interface User {
   id: number
   email: string
@@ -48,5 +47,16 @@ export interface Recipe {
   slots?: Record<string, Ingredient | null>
   is_public?: boolean
 }
+
+// --------------------
+// Task 1.4: PriceListItem
+// --------------------
+export interface PriceListItem {
+  id: number
+  item_id: number
+  price: number
+  type?: string
+}
+
 
 
