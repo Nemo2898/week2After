@@ -1,3 +1,6 @@
+// --------------------
+// Base Types
+// --------------------
 export interface BaseType {
   id: number
   name: string
@@ -24,4 +27,26 @@ export interface Ingredient extends BaseType {
   diets: string[]
   weight_grams?: number
 }
+
+// --------------------
+// Task 1.3: Add User & Recipe
+// --------------------
+
+export interface User {
+  id: number
+  email: string
+  name?: string
+  role: string
+}
+
+export interface Recipe {
+  id: number
+  userId: number
+  name: string
+  bowlId: number
+  ingredientIds: number[]
+  slots?: Record<string, Ingredient | null>
+  is_public?: boolean
+}
+
 
