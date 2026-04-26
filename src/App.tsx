@@ -1,6 +1,8 @@
 
 import Header from "./components/Header.tsx"
 import Footer from "./components/Footer.tsx"
+import BaseSelection from "./components/BaseSelection.tsx"
+import BowlSelection from "./components/BowlSelection.tsx"
 
 // 你的页面组件（示例）
 
