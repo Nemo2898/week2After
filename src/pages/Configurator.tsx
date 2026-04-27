@@ -44,7 +44,7 @@ export default function Configurator() {
       </div>
 
       {/* Bottom row: ingredient section */}
-      <IngredientSection />
+        <IngredientSection categories={categories} ingredients={ingredients} />
 
       {/* Summary bar */}
       <SummaryBar />
