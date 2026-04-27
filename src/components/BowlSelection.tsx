@@ -1,4 +1,4 @@
-import { Bowl } from "../types"
+import type { Bowl } from "../types"
 
 interface Props {
   bowls: Bowl[]

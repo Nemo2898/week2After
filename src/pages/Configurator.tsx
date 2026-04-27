@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Bowl, Category, Ingredient } from "../types"
+import type { Bowl, Category, Ingredient } from "../types"
 import { getBowls, getCategories, getIngredients } from "../services/api"
 import BaseSelection from "../components/BaseSelection.tsx"
 import BowlSelection from "../components/BowlSelection.tsx"
@@ -11,7 +11,6 @@ export default function Configurator() {
   const [bowls, setBowls] = useState<Bowl[]>([])
   const [categories, setCategories] = useState<Category[]>([])
   const [ingredients, setIngredients] = useState<Ingredient[]>([])
-  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     async function fetchData() {
@@ -27,7 +26,6 @@ export default function Configurator() {
       } catch (error) {
         console.error(error)
       } finally {
-        setIsLoading(false)
       }
     }
     fetchData()

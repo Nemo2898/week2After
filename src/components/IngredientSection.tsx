@@ -1,4 +1,4 @@
-import { Category, Ingredient } from "../types"
+import type { Category, Ingredient } from "../types"
 import IngredientCard from "./IngredientCard"
 
 interface Props {
