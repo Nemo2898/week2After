@@ -1,3 +1,5 @@
+import { useState } from "react"
+import { Bowl, Category, Ingredient } from "../types"
 import BaseSelection from "../components/BaseSelection.tsx"
 import BowlSelection from "../components/BowlSelection.tsx"
 import CenterBowl from "../components/CenterBowl.tsx"
@@ -5,6 +7,10 @@ import IngredientSection from "../components/IngredientSection.tsx"
 import SummaryBar from "../components/SummaryBar.tsx"
 
 export default function Configurator() {
+  const [bowls, setBowls] = useState<Bowl[]>([])
+  const [categories, setCategories] = useState<Category[]>([])
+  const [ingredients, setIngredients] = useState<Ingredient[]>([])
+
   return (
     <main className="flex-1 max-w-6xl w-full mx-auto p-6 flex flex-col gap-8 mt-4">
 
