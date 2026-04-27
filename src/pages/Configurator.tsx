@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Bowl, Category, Ingredient } from "../types"
-import { getBowls, getCategories } from "../services/api"
+import { getBowls, getCategories, getIngredients } from "../services/api"
 import BaseSelection from "../components/BaseSelection.tsx"
 import BowlSelection from "../components/BowlSelection.tsx"
 import CenterBowl from "../components/CenterBowl.tsx"
@@ -16,14 +16,16 @@ export default function Configurator() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const [bowlsData, categoriesData] = await Promise.all([
+        const [bowlsData, categoriesData, ingredientsData] = await Promise.all([
           getBowls(),
-          getCategories()
+          getCategories(),
+          getIngredients()
         ])
         setBowls(bowlsData)
         setCategories(categoriesData)
+        setIngredients(ingredientsData)
       } catch (error) {
-        console.error("Failed to fetch data:", error)
+        console.error(error)
       } finally {
         setIsLoading(false)
       }
