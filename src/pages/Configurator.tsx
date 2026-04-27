@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Bowl, Category, Ingredient } from "../types"
-import { getBowls } from "../services/api"
+import { getBowls, getCategories } from "../services/api"
 import BaseSelection from "../components/BaseSelection.tsx"
 import BowlSelection from "../components/BowlSelection.tsx"
 import CenterBowl from "../components/CenterBowl.tsx"
@@ -11,9 +11,24 @@ export default function Configurator() {
   const [bowls, setBowls] = useState<Bowl[]>([])
   const [categories, setCategories] = useState<Category[]>([])
   const [ingredients, setIngredients] = useState<Ingredient[]>([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    getBowls().then(setBowls)
+    async function fetchData() {
+      try {
+        const [bowlsData, categoriesData] = await Promise.all([
+          getBowls(),
+          getCategories()
+        ])
+        setBowls(bowlsData)
+        setCategories(categoriesData)
+      } catch (error) {
+        console.error("Failed to fetch data:", error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+    fetchData()
   }, [])
 
   return (
