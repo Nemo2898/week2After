@@ -5,6 +5,7 @@ import BaseSelection from "./components/BaseSelection.tsx"
 import BowlSelection from "./components/BowlSelection.tsx"
 import CenterBowl from "./components/CenterBowl.tsx"
 import IngredientSection from "./components/IngredientSection.tsx"
+import SummaryBar from "./components/SummaryBar.tsx"
 
 export default function App() {
   return (
@@ -25,6 +26,9 @@ export default function App() {
 
         {/* Bottom row: ingredient section */}
         <IngredientSection />
+
+        {/* Summary bar */}
+        <SummaryBar />
       </main>
 
       {/* Footer at the bottom */}
