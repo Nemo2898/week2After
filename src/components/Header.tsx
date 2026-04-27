@@ -21,7 +21,7 @@ export default function Header() {
       {/* Right Menu */}
       <div className="bg-[#A2D135] text-black rounded-b-3xl rounded-t-xl px-6 py-4 flex flex-col gap-2 min-w-[200px] shadow-md">
         <button className="text-left hover:underline">Login</button>
-        <button className="text-left hover:underline">My Recipes</button>
+        <Link to="/community" className="text-left hover:underline">Saved recipes</Link>
         <button className="text-left hover:underline">Settings</button>
       </div>
     </header>
